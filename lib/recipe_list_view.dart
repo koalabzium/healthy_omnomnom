@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import './recipe.dart';
 import 'recipe_details_view.dart';
 
@@ -24,31 +23,31 @@ class RecipeList extends StatelessWidget {
 
   Widget _buildRecipeList(BuildContext context, List<DocumentSnapshot> snapshot) {
 
-    List<Recipe> Recipes = [];
-    Recipes = snapshot.map((data) => getRecipes(context, data)).toList();
-    Recipes.forEach((e) => print(e.realization));
+    List<Recipe> recipes = [];
+    recipes = snapshot.map((data) => getRecipes(context, data)).toList();
+    recipes.forEach((e) => print(e.realization));
 
-    List<Recipe> Lunches = [];
-    List<Recipe> Dinners = [];
-    List<Recipe> Breakfasts = [];
-    List<Recipe> Suppers = [];
-    List<Recipe> Snacks = [];
+    List<Recipe> lunches = [];
+    List<Recipe> dinners = [];
+    List<Recipe> breakfasts = [];
+    List<Recipe> suppers = [];
+    List<Recipe> snacks = [];
 
-    for(int i=0;i<Recipes.length;i++){
-      if(Recipes[i].type == "Obiad"){
-        Dinners.add(Recipes[i]);
-      } else if (Recipes[i].type == "Sniadanie"){
-        Breakfasts.add(Recipes[i]);
-      } else if (Recipes[i].type == "Lunch"){
-        Lunches.add(Recipes[i]);
-      } else if (Recipes[i].type == "Kolacja"){
-        Suppers.add(Recipes[i]);
-      } else if (Recipes[i].type == "Przekaski"){
-        Snacks.add(Recipes[i]);
+    for(int i=0;i<recipes.length;i++){
+      if(recipes[i].type == "Obiad"){
+        dinners.add(recipes[i]);
+      } else if (recipes[i].type == "Sniadanie"){
+        breakfasts.add(recipes[i]);
+      } else if (recipes[i].type == "Lunch"){
+        lunches.add(recipes[i]);
+      } else if (recipes[i].type == "Kolacja"){
+        suppers.add(recipes[i]);
+      } else if (recipes[i].type == "Przekaski"){
+        snacks.add(recipes[i]);
       }
     }
 
-    Dinners.forEach((e) => print(e.type));
+    dinners.forEach((e) => print(e.type));
 
     return ListView(
       padding: const EdgeInsets.only(top: 20.0),
@@ -58,7 +57,7 @@ class RecipeList extends StatelessWidget {
 
   Recipe getRecipes(BuildContext context, DocumentSnapshot data) {
     final recipe = Recipe.fromSnapshot(data);
-    return Recipe.fromSnapshot(data);
+    return recipe;
   }
 
 
