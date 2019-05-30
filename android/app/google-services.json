@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "785143448882",
+    "firebase_url": "https://healthy-omnomnom.firebaseio.com",
+    "project_id": "healthy-omnomnom",
+    "storage_bucket": "healthy-omnomnom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785143448882:android:4da16d5ad85de23a",
+        "android_client_info": {
+          "package_name": "com.example.healthy_omnomnom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785143448882-rbp13oga9qeodogpml3ubnvjrn6bopmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVFfGwmNQCmXEpXOFanDJVBCAWYOWFpUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785143448882-rbp13oga9qeodogpml3ubnvjrn6bopmc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
