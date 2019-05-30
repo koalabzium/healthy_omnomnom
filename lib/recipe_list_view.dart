@@ -1,65 +1,138 @@
 import 'package:flutter/material.dart';
 
 import './recipe.dart';
+import 'recipe_details_view.dart';
 
 class RecipeList extends StatelessWidget {
 //  final List<Recipe> recipes;
 
-  final List<Recipe> breakfasts = [Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name2", "type2", ["b", "c"], "description2", ["d", "e"], false), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true)];
-  final List<Recipe> dinners = [Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name2", "type2", ["b", "c"], "description2", ["d", "e"], false), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true)];
-  final List<Recipe> desserts = [Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name2", "type2", ["b", "c"], "description2", ["d", "e"], false), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true)];
-  final List<Recipe> smoothies = [Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name2", "type2", ["b", "c"], "description2", ["d", "e"], false), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true)];
-  final List<Recipe> owsianki = [Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name2", "type2", ["b", "c"], "description2", ["d", "e"], false), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true), Recipe("assets/balony.jpg", "name", "type", ["b", "c"], "description", ["d", "e"], true)];
+  final List<Recipe> Sniadania = [
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis2", "type2", ["b", "c", "b", "c"],
+        "jak to zrobic2", ["d", "e", "f", "g", "h"], false),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true)
+  ];
+  final List<Recipe> Obiady = [
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis2", "type2", ["b", "c", "b", "c"],
+        "jak to zrobic2", ["d", "e", "f", "g", "h"], false),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true)
+  ];
+  final List<Recipe> Desery = [
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis2", "type2", ["b", "c", "b", "c"],
+        "jak to zrobic2", ["d", "e", "f", "g", "h"], false),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true)
+  ];
+  final List<Recipe> Koktajle = [
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis2", "type2", ["b", "c", "b", "c"],
+        "jak to zrobic2", ["d", "e", "f", "g", "h"], false),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true)
+  ];
+  final List<Recipe> Owsianki = [
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis2", "type2", ["b", "c", "b", "c"],
+        "jak to zrobic2", ["d", "e", "f", "g", "h"], false),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true),
+    Recipe("assets/balony.jpg", "Super przepis", "type", ["b", "c", "b", "c"],
+        "jak to zrobic", ["d", "e", "f", "g", "h"], true)
+  ];
 
-
-//  RecipeList(this.breakfasts, this.dinners,
-//      this.desserts); //  RecipeList(this.recipes);
+//  RecipeList(this.Sniadania, this.Obiady,
+//      this.Desery); //  RecipeList(this.recipes);
 
   @override
   Widget build(BuildContext context) {
-    return _buildRecipeList(breakfasts, dinners, desserts, smoothies, owsianki);
+    return _buildRecipeList(Sniadania, Obiady, Desery, Koktajle, Owsianki);
   }
 
-  Widget _buildRecipeList(List<Recipe> breakfasts, List<Recipe> dinners, List<Recipe> desserts, List<Recipe> smoothies, List<Recipe> owsianki) {
-    List<List> dishes = [breakfasts, dinners, desserts, smoothies, owsianki];
-    return ListView.builder(
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return _buildRecipeRow(dishes[index]);
-        }
-    );
+  Widget _buildRecipeList(List<Recipe> Sniadania, List<Recipe> Obiady,
+      List<Recipe> Desery, List<Recipe> Koktajle, List<Recipe> Owsianki) {
+    List<List> meals = [Sniadania, Obiady, Desery, Koktajle, Owsianki];
+    List<String> mealsList = [
+      "Sniadania",
+      "Obiady",
+      "Desery",
+      "Koktajle",
+      "Owsianki"
+    ];
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Healthy Omnomnom'),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.search),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: Center(
+            child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int index) {
+                  return _buildRecipeRow(meals[index], mealsList[index]);
+                })));
   }
 
-  Widget _buildRecipeRow(List<Recipe> list) {
-    double height = 150.0;
-    return SizedBox(
-      height: height,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-          itemCount: list.length,
-          itemBuilder: (BuildContext context, int index){
-          return _buildSingleTile(list[index], height);
-          },
-      )
-    );
+  Widget _buildRecipeRow(List<Recipe> list, String listName) {
+    double height = 200.0;
+    double width = 250.0;
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Text(listName,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20))),
+      SizedBox(
+          height: height,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: list.length,
+            itemBuilder: (BuildContext context, int index) {
+              return _buildSingleTile(context, list[index], height, width);
+            },
+          ))
+    ]);
   }
 
-  Widget _buildSingleTile(Recipe recipe, double parentSize) {
-    return Container(
-      padding: EdgeInsets.all(10.0),
-      child: SizedBox(
-        width: parentSize,
-        height: parentSize,
-        child: Card(
-          child: Column(
-            children: <Widget>[
-              Image.asset(recipe.imagePath),
-              Text(recipe.name),
-            ],
-          )
-        )
-      )
-    );
+  Widget _buildSingleTile(BuildContext context, Recipe recipe,
+      double parentHeight, double parentWidth) {
+    return FlatButton(
+        child: Container(
+            //padding: EdgeInsets.only(left: 2.0),
+            child: SizedBox(
+                width: parentWidth,
+                height: parentHeight,
+                child: Card(
+                    child: Column(
+                  children: <Widget>[
+                    Image.asset(recipe.imagePath),
+                    Text(recipe.name),
+                  ],
+                )))),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => RecipeDetails(recipe)),
+          );
+        });
   }
-
 }
