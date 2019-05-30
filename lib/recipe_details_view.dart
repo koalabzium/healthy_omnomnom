@@ -42,7 +42,7 @@ class RecipeDetails extends StatelessWidget {
                               fontWeight: FontWeight.bold, fontSize: 20)),
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: recipe.ingredients
+                          children: recipe.ingredients_list
                               .map((ingredient) => Text(ingredient))
                               .toList()),
                     ])),
@@ -54,7 +54,7 @@ class RecipeDetails extends StatelessWidget {
                       Text('Przygotowanie:',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20)),
-                      Text(recipe.description),
+                      Text(recipe.realization),
                     ])),
             Container(
                 padding: EdgeInsets.all(10.0),
@@ -64,11 +64,11 @@ class RecipeDetails extends StatelessWidget {
                       Text('Wartosci odzywcze:',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20)),
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: recipe.nutritionalFacts
-                              .map((fact) => Text(fact))
-                              .toList()),
+//                      Column(
+//                          crossAxisAlignment: CrossAxisAlignment.start,
+//                          children: recipe.nutritionalFacts
+//                              .map((fact) => Text(fact))
+//                              .toList()),
                     ]))
           ],
         ))));
